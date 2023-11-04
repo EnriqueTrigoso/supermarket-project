@@ -1,0 +1,1 @@
+export const DISCOUNT_PRODUCTS_ID = 1

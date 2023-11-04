@@ -1,0 +1,78 @@
+.cart {
+	width: 20%;
+	border: .5px solid var(--color-primary);
+	border-radius: 20px;
+	padding: 20px 40px;
+}
+
+.whatsap {
+	cursor: pointer;
+}
+
+.price {
+	color: var(--blue);
+	font-size: var(--xl);
+	font-weight: 400;
+}
+
+.container_counter_whatsap {
+	margin: 15px 0 25px 0;
+	gap: 25px;
+}
+
+.button {
+	background-color: var(--color-primary);
+	border: 1px solid var(--color-primary);
+	font-weight: 700;
+	font-size: var(--md);
+	border-radius: 7px;
+	padding: 12px 20px;
+	gap: 10px;
+	cursor: pointer;
+	color: var(--white);
+}
+
+.icon {
+	font-size: 18px;
+	font-weight: 100;
+	color: var(--white);
+}
+
+.button:hover {
+	background-color: var(--black);
+	border: 1px solid var(--black);
+}
+
+.button:hover .icon {
+	color: var(--white-gray);
+}
+
+@media (max-width: 600px) {
+	.button {
+		padding: 10px 20px;
+	}
+}
+
+@media (max-width: 1200px) {
+
+	.cart {
+		width: 25%;
+	}
+
+}
+
+@media (max-width: 1000px) {
+
+	.cart {
+		width: 100%;
+		justify-content: center;
+	}
+
+}
+
+
+@media (max-width: 600px) {
+	.price {
+		font-size: var(--lg);
+	}
+}

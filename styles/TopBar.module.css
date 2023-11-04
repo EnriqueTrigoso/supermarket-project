@@ -1,0 +1,44 @@
+.topbar {
+  border-bottom: 1px solid #2f3336;
+}
+
+.topbar div {
+  color: var(--white-gray);
+  padding-top: 1px;
+}
+
+.topbar ul a {
+  color: var(--white-gray);
+  cursor: pointer;
+  font-size: 14px;
+  text-align: left;
+  padding: 10px 0;
+  display: inline-block;
+}
+
+.topbar ul a:hover {
+  color: var(--white);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.topbar ul li {
+  gap: 7px;
+}
+
+.topbar li::before {
+  content: '|';
+  color: var(--gray);
+  display: inline-block;
+  margin: 0 1em 0 0;
+}
+
+.topbar li:nth-child(1)::before {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  .topbar {
+    display: none;
+  }
+}

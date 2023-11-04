@@ -1,0 +1,21 @@
+.container {
+	display: flex;
+	gap: 20px;
+	padding: 4rem 0;
+}
+
+.banner {
+	display: flex;
+	align-items: center;
+	margin: 40px 20px;
+}
+
+.banner img {
+	border-radius: 15px;
+}
+
+@media (max-width: 1000px) {
+	.container {
+	  display: none;
+	}
+}

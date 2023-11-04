@@ -1,0 +1,55 @@
+.categories {
+  width: 19.5%;
+}
+
+.categories li {
+  border-bottom: 1px solid #2f3336;
+}
+
+.categories li:nth-child(10) {
+  border-bottom: none;
+}
+
+.categories a {
+  font-weight: 700;
+  font-size: 13px;
+  color: #d9d9d9;
+  width: 100%;
+  padding: 10px 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.categories li:hover {
+  background-color: #181818;
+}
+
+.categories a:hover {
+  font-size: 13.5px;
+}
+
+.categories div {
+  background-color: var(--color-primary);
+  height: 44px;
+  border-radius: 7px 7px 0 0;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 0 20px;
+  color: var(--white);
+  cursor: pointer;
+}
+
+.categories ul {
+  position: absolute;
+  background-color: #212121;
+  width: 100%;
+  border-radius: 0 0 8px 8px;
+  padding: 0.5em 20px;
+  z-index: 1;
+}
+
+@media (max-width: 1000px) {
+  .categories {
+    display: none;
+  }
+}

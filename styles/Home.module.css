@@ -1,0 +1,112 @@
+.section_offer {
+  padding-top: 3rem;
+  padding-bottom: 20px;
+}
+
+.container_offer {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.offer {
+  width: 27.5%;
+}
+
+.products_offer {
+  width: 72.5%;
+}
+
+@media (max-width: 1300px) {
+  .container_offer {
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 1200px) {
+  .offer {
+    width: 40%;
+  }
+
+  .products_offer {
+    width: 60%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .section_Offer {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .container_offer {
+    display: block;
+  }
+
+  .offer {
+    width: 100%;
+  }
+
+  .products_offer {
+    width: 100%;
+    padding-top: 1rem;
+  }
+}
+
+.products_offer {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (min-width: 1200px) {
+  .products_offer {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1300px) {
+  .products_offer {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/*  */
+
+.section_categories {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.products_categories {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (min-width: 1200px) {
+  .products_categories {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1300px) {
+  .products_categories {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+.products_categories div:nth-child(3) {
+  grid-column: span 2/span 2;
+  grid-row: span 1/span 1;
+}
+
+.products_categories div:nth-child(8) {
+  grid-column: span 2/span 2;
+  grid-row: span 1/span 1;
+}
+
+/* Section_Carcategories */
+
+.section_categorycar {
+  padding-top: 5px;
+  padding-bottom: 10px;
+}

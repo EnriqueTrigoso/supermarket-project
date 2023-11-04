@@ -1,0 +1,92 @@
+.section {
+  position: fixed;
+  width: 100%;
+  z-index: 3;
+  top: 0;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, .7);
+  transition: opacity .2s ease;
+}
+
+.cart {
+  width: 400px;
+  position: absolute;
+  right: 0;
+  background-color: var(--background-slider);
+  height: 100vh;
+  top: 0;
+  padding: 20px 12px;
+  z-index: 1;
+}
+
+.container_cards {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  height: 83%;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.container_cards::-webkit-scrollbar {
+  display: none;
+}
+
+.close svg {
+  transform: rotate(180deg);
+  margin-right: 14px;
+  cursor: pointer;
+}
+
+.title {
+  padding-bottom: 25px;
+}
+
+.title h2 {
+  color: var(--white-gray);
+  font-size: 18px;
+}
+
+.container_button {
+  padding: 10px;
+  position: absolute;
+  bottom: 50px;
+  width: 95%;
+}
+
+.button {
+  align-items: center;
+  background: linear-gradient(0deg, #1FAF38 0%, #60D669 100%);
+  border-radius: 7px;
+  color: var(--white);
+  display: flex;
+  padding: 13px 0;
+  font-size: var(--md);
+  font-weight: 700;
+  gap: 25px;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.button hr {
+  height: 20px;
+  border: 0.1px solid var(--white);
+}
+
+.name_not_products {
+  font-size: var(--md);
+  color: var(--white-gray);
+  font-weight: 600;
+}
+
+.icon_wp {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+@media (max-width: 700px) {
+  .cart {
+    width: 100%;
+  }
+}

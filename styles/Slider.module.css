@@ -1,0 +1,164 @@
+.slider {
+  position: relative;
+}
+
+.slide {
+  max-width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: opacity 0.75s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.button {
+  position: absolute;
+  top: 45%;
+  width: 100%;
+}
+
+.button div {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+
+.button button {
+  padding: 10px;
+  cursor: pointer;
+  border: 1px solid var(--color-primary);
+  background-color: var(--color-primary);
+  color: var(--white);
+}
+
+.mobil {
+  display: none;
+}
+
+.desktop {
+  display: block;
+}
+
+.desktop::after {
+  content: "";
+  position: absolute;
+  background-image: linear-gradient(to left, rgba(24, 24, 24, 0), rgba(24, 24, 24, .9));
+  height: 100%;
+  width: 50%;
+  top: 0;
+  left: 0;
+}
+
+@media (max-width: 1000px) {
+  .desktop {
+    display: none;
+  }
+
+  .mobil {
+    display: block;
+  }
+
+  .mobil::after {
+    content: "";
+    position: absolute;
+    background-image: linear-gradient(to top, rgba(24, 24, 24, .5), rgba(24, 24, 24, .95));
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  width: 40%;
+  height: 100%;
+}
+
+.content div {
+  position: relative;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-left: 80px;
+}
+
+.hashtag {
+  color: rgb(52, 188, 236);
+  font-size: var(--md);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.title {
+  color: var(--white);
+  font-weight: 700;
+  font-size: var(--xl);
+  text-transform: uppercase;
+  padding-top: 5px;
+  padding-bottom: 15px;
+  line-height: 2rem;
+}
+
+.description {
+  color: var(--white);
+  font-weight: 400;
+  font-size: 16px;
+  width: 400px;
+}
+
+.link {
+  padding: 10px;
+  cursor: pointer;
+  background-color: var(--color-primary);
+  width: 40%;
+  font-size: var(--sm);
+  font-weight: 700;
+  color: var(--white);
+  text-transform: uppercase;
+  margin-top: 25px;
+  border-radius: 7px;
+  text-align: center;
+}
+
+@media (max-width: 1200px) {
+  .content {
+    width: 60%;
+    height: 100%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .content {
+    width: 100%;
+    height: 100%;
+  }
+
+  .content div {
+    padding: 0 50px;
+  }
+
+  .hashtag {
+    font-size: var(--sm);
+  }
+
+  .title {
+    font-size: var(--lg);
+    line-height: 1.5rem;
+    padding-bottom: 10px;
+  }
+
+  .description {
+    font-size: var(--md);
+    width: 100%;
+  }
+
+  .link {
+    width: 70%;
+    font-size: var(--sm);
+  }
+}

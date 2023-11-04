@@ -1,0 +1,182 @@
+.stores {
+  width: 35%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+
+.map_container {
+  width: 70%;
+  height: 100%;
+}
+
+.map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
+
+.listings {
+  height: 100%;
+  overflow: auto;
+  padding-bottom: 60px;
+  padding-top: 15px;
+}
+
+.item {
+  display: flex;
+  border-radius: 15px;
+  border: 1px solid var(--hover-color);
+  overflow: hidden;
+  gap: 20px;
+  /* cursor: pointer; */
+  margin-bottom: 20px;
+  padding: 15px;
+}
+
+.item:hover {
+  background-color: var(--hover-color);
+}
+
+.item.active {
+  background-color: #212121;
+}
+
+.image {
+  display: flex;
+  gap: 10px 0;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.image .logo {
+  border-radius: 7px;
+  width: 120px;
+}
+
+.map_ico {
+  border-radius: 100%;
+  width: 20px;
+  height: 20px;
+}
+
+.map_text {
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+}
+
+.map_ico_container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.map_ico_container:hover {
+  transform: scale(1.12);
+}
+
+.details h2 {
+  color: var(--white);
+  font-size: var(--lg);
+}
+
+.details h3 {
+  color: var(--white-gray);
+  font-size: var(--md);
+  font-weight: 500;
+}
+
+.details p {
+  color: var(--white-gray);
+  font-size: var(--md);
+}
+
+.details div {
+  padding-top: 15px;
+}
+
+.div {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.details span {
+  color: var(--white);
+  font-size: var(--md);
+}
+
+.address {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.phone {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+}
+
+.phone span {
+  font-size: 20px;
+}
+
+.section_local {
+  height: 75vh;
+  position: relative;
+  margin-bottom: 40px;
+  display: flex;
+}
+
+.button {
+  display: none;
+}
+
+@media (max-width: 1000px) {
+  .stores {
+    width: 100%;
+    position: absolute;
+    background-color: var(--background-color);
+    z-index: 5;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .details h2 {
+    font-size: 16px;
+  }
+
+  .map {
+    position: absolute;
+    bottom: 0;
+    left: 15px;
+    right: 15px;
+    width: 92vw;
+    z-index: 99;
+  }
+
+  .section_local {
+    height: calc(100vh - 163px);
+  }
+
+  .button {
+    padding: 10px;
+    cursor: pointer;
+    background-color: var(--color-primary);
+    width: 100%;
+    font-size: var(--sm);
+    font-weight: 700;
+    color: var(--white);
+    text-transform: uppercase;
+    border-radius: 7px;
+    text-align: center;
+    border: none;
+    display: block;
+  }
+
+}

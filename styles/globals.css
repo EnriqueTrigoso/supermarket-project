@@ -1,0 +1,428 @@
+:root {
+  --color-primary: #F92438;
+  --background-color: #181818;
+  --background-slider: #151515;
+  --hover-color: #212121;
+  --black: #000000;
+  --white: #ffffff;
+  --white-gray: #d9d9d9;
+  --gray: #6e767d;
+  --blue: #1da1f2;
+  --image-radius: 7px;
+  --sm: 13px;
+  --md: 14px;
+  --lg: 20px;
+  --xl: 28px;
+}
+
+* {
+  list-style: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+*:focus {
+  outline: none;
+}
+
+body {
+  background-color: var(--background-color);
+  font-family: 'DM Sans', sans-serif;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  text-decoration: none;
+  color: #d9d9d9;
+}
+
+input:focus {
+  outline: none;
+}
+
+i {
+  font-style: normal;
+}
+
+.block {
+  display: block;
+}
+
+.container {
+  max-width: 1430px;
+  margin: 0 auto;
+  padding: 0 12px;
+  position: relative;
+}
+
+#map {
+  width: 65%;
+  height: 100%;
+}
+
+@media (max-width: 1000px) {
+  #map {
+
+    width: 93%;
+    height: 100%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .container {
+    max-width: 411px;
+  }
+
+  .none {
+    display: none;
+  }
+}
+
+.scrolled {
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  background-color: var(--background-color);
+  width: 100%;
+  left: 0;
+  right: 0;
+}
+
+.relative {
+  position: relative;
+}
+
+.flex {
+  display: flex;
+}
+
+.block {
+  display: block;
+}
+
+.gap {
+  gap: 25px;
+}
+
+.p-left {
+  padding-left: 27px;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.top {
+  margin-top: 5px;
+}
+
+.align-items {
+  align-items: center;
+}
+
+.justify-content {
+  justify-content: center;
+}
+
+.no-select {
+  user-select: none;
+}
+
+.text-align {
+  text-align: center;
+}
+
+.border_after::after {
+  content: '';
+  border-right: 1px solid #2f3336;
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  height: 70%;
+  transform: translateY(-50%);
+}
+
+.border_after:nth-child(4n)::after {
+  display: none;
+}
+
+@media (max-width: 1200px) {
+  .border_after:nth-child(2n)::after {
+    display: none;
+  }
+}
+
+.border_solid {
+  border: 1px solid #181818;
+}
+
+.variant_Horizontal {
+  display: flex;
+}
+
+@media (max-width: 900px) {
+  .variant_Horizontal {
+    display: block;
+  }
+}
+
+
+@font-face {
+  font-family: "icons";
+  src: url("../assets/icons.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "icons";
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.icon-ec-tvs:before {
+  content: "\62";
+}
+
+.icon-ec-list-view-medium:before {
+  content: "\63";
+}
+
+.icon-ec-add-to-cart:before {
+  content: "\64";
+}
+
+.icon-ec-arrow-right-categproes:before {
+  content: "\65";
+}
+
+.icon-ec-comment:before {
+  content: "\66";
+}
+
+.icon-ec-compare:before {
+  content: "\67";
+}
+
+.icon-ec-customers:before {
+  content: "\68";
+}
+
+.icon-ec-dollar:before {
+  content: "\69";
+}
+
+.icon-ec-favorites:before {
+  content: "\6a";
+}
+
+.icon-ec-grid-view:before {
+  content: "\6b";
+}
+
+.icon-ec-list-view:before {
+  content: "\6c";
+}
+
+.icon-ec-blog-likes:before {
+  content: "\6d";
+}
+
+.icon-ec-phone:before {
+  content: "\6e";
+}
+
+.icon-ec-close-remove:before {
+  content: "\70";
+}
+
+.icon-ec-newsletter:before {
+  content: "\71";
+}
+
+.icon-ec-speaker:before {
+  content: "\72";
+}
+
+.icon-ec-smartwatch:before {
+  content: "\73";
+}
+
+.icon-ec-map-pointer:before {
+  content: "\74";
+}
+
+.icon-ec-mail:before {
+  content: "\75";
+}
+
+.icon-ec-smartphones:before {
+  content: "\76";
+}
+
+.icon-ec-printer:before {
+  content: "\77";
+}
+
+.icon-ec-category-icon:before {
+  content: "\78";
+}
+
+.icon-ec-transport:before {
+  content: "\79";
+}
+
+.icon-ec-laptop:before {
+  content: "\7a";
+}
+
+.icon-ec-headphones:before {
+  content: "\41";
+}
+
+.icon-ec-thing-arrow-right:before {
+  content: "\42";
+}
+
+.icon-ec-tag:before {
+  content: "\43";
+}
+
+.icon-ec-gamepad:before {
+  content: "\44";
+}
+
+.icon-ec-drone:before {
+  content: "\45";
+}
+
+.icon-ec-support:before {
+  content: "\46";
+}
+
+.icon-ec-shopping-bag:before {
+  content: "\47";
+}
+
+.icon-ec-cameras:before {
+  content: "\48";
+}
+
+.icon-ec-list-view-small:before {
+  content: "\49";
+}
+
+.icon-ec-search:before {
+  content: "\4a";
+}
+
+.icon-ec-returning:before {
+  content: "\4b";
+}
+
+.icon-ec-arrow-down-search:before {
+  content: "\4c";
+}
+
+.icon-ec-user:before {
+  content: "\61";
+}
+
+.icon-ec-payment:before {
+  content: "\6f";
+}
+
+
+
+
+
+
+/* map */
+
+
+.marker {
+  border: none;
+  cursor: pointer;
+  height: 41.59px;
+  width: 30px;
+  background-image: url(../assets/map_point.png);
+}
+
+/* Marker tweaks */
+.mapboxgl-popup {
+  padding-bottom: 50px;
+}
+
+.mapboxgl-popup-close-button {
+  display: none;
+}
+
+.mapboxgl-popup-content {
+  font-family: 'DM Sans', sans-serif;
+  padding: 10px;
+  background-color: #212121;
+  border-radius: 10px;
+  display: flex;
+}
+
+.mapboxgl-popup-content img {
+  border-radius: 100%;
+  width: 100px;
+}
+
+.mapboxgl-popup-content h2 {
+  font-size: var(--lg);
+  padding-bottom: 10px;
+  font-weight: 600;
+  color: var(--white);
+}
+
+.mapboxgl-popup-content h3 {
+  margin: 0;
+  font-weight: 400;
+  font-size: var(--sm);
+  color: var(--white);
+}
+
+.mapboxgl-popup-content div {
+  padding: 10px;
+}
+
+.mapboxgl-popup-anchor-top>.mapboxgl-popup-content {
+  margin-top: 15px;
+}
+
+.mapboxgl-popup-anchor-top>.mapboxgl-popup-tip {
+  border-bottom-color: #91c949;
+}
+
+.geocoder {
+  position: absolute;
+  z-index: 1;
+  width: 50%;
+  left: 50%;
+  margin-left: -25%;
+  top: 10px;
+}
+
+.mapboxgl-ctrl-geocoder {
+  min-width: 100%;
+}
+
+.mile {
+  position: absolute;
+  z-index: 1;
+  width: 50%;
+  left: 50%;
+  margin-left: 25%;
+  top: 10px;
+}

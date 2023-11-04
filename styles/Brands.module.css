@@ -1,0 +1,6 @@
+.item {
+	display: flex;
+	min-width: 100px;
+	min-height: 70px;
+	align-items: center;
+}

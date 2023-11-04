@@ -1,0 +1,21 @@
+
+
+@media (max-width: 1000px) {
+	.close_button {
+		background-color: var(--color-primary);
+		border-radius: 7px;
+		z-index: 10;
+		position: absolute;
+		left: 10px;
+		top: 10px;
+		cursor: pointer;
+	}
+}
+
+@media (min-width: 1000px) {
+
+	.close_button {
+		display: none;
+	}
+
+}
