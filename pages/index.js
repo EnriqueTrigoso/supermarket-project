@@ -10,6 +10,8 @@ import { useEffect } from 'react';
 
 export async function getStaticProps() {
 
+  console.log('entrando en get static prosp')
+
   const [products, categories, autos, sliderImages, discount_products] = await Promise.allSettled([
     supabase.from('product').select('*').neq('imgUrl', ''),
     supabase.from('categories').select('*'),
@@ -44,6 +46,10 @@ export default function Home({ products, categories, autos, sliderImages, discou
 
   const parrilla_products = products.filter((product) => product.promotion === 2).slice(0, 8);
   const ofertas_especiales = products.filter((product) => product.promotion === 3).slice(0, 10);
+
+  console.log(parrilla_products)
+  console.log(ofertas_especiales)
+
 
   return (
     <PageLayout title='B&V Group Import | Todo para tu auto al mejor precio ..! | Repuestos, accesorios y más.'>
