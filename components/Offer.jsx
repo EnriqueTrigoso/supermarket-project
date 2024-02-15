@@ -5,46 +5,41 @@ import { formatingPrices, toDaysHoursMinutes } from "../utils";
 import { useEffect, useState } from "react";
 
 const Offer = ({ discount_products, products }) => {
-
   //Time in miliseconds
-  const [timeLeft, setTimeLeft] = useState(0)
-  const time = toDaysHoursMinutes(timeLeft)
+  const [timeLeft, setTimeLeft] = useState(0);
+  const time = toDaysHoursMinutes(timeLeft);
 
-  const discount_product = discount_products.filter(product =>
-    product.promotion === 3
-  )[0]
+  const discount_product = discount_products.filter(
+    (product) => product.promotion === 3
+  )[0];
 
-  const product = products.find(product => product.id === discount_product.product)
+  const product = products.find(
+    (product) => product.id === discount_product.product
+  );
 
   useEffect(() => {
-    const current_date = new Date()
-    const finish_time = new Date(discount_product.finish_time)
-    const time_left = Math.abs(finish_time - current_date)
-    setTimeLeft(time_left)
+    const current_date = new Date();
+    const finish_time = new Date(discount_product.finish_time);
+    const time_left = finish_time - current_date;
+    setTimeLeft(time_left);
   }, [discount_product.finish_time, setTimeLeft]);
 
   useEffect(() => {
     const myInterval = setInterval(() => {
-     
-      setTimeLeft(prevTimeLeft => {
-
-        const __time = prevTimeLeft - 1000
-
-        if (__time > 60000){
-          return __time
+      setTimeLeft((prevTimeLeft) => {
+        const __time = prevTimeLeft - 1000;
+        if (__time >= 0) {
+          return __time;
         } else {
-          clearInterval(this)
-          return 0
+          clearInterval(myInterval);
+          return 0;
         }
-
-      })
-    
+      });
     }, 1000);
 
     return () => {
-      clearInterval(myInterval)
+      clearInterval(myInterval);
     };
-
   }, [setTimeLeft]);
 
   return (
@@ -66,6 +61,7 @@ const Offer = ({ discount_products, products }) => {
         ¡Darse prisa! La oferta termina en:
       </span>
       <div className={`${styles.date} flex justify-content`}>
+
         <span>
           <div>{time.days}</div>
           dia
@@ -81,6 +77,8 @@ const Offer = ({ discount_products, products }) => {
           mins
         </span>
       </div>
+
+      {timeLeft <= 0 && <span className={styles.subtitle}>La oferta ha terminado</span>}
     </div>
   );
 };

@@ -3,6 +3,7 @@
   border-radius: 21px;
   background-color: #212121;
   padding: 1.571em;
+  text-align: center;
 }
 
 .title {
@@ -83,6 +84,21 @@
 .date bdi {
   color: #737373;
   font-size: 30px;
+}
+
+.offer_finish {
+  width: 56px;
+  height: 41px;
+  background-color: #737373;
+  border-radius: 4px;
+  font-size: 25px;
+  justify-content: center;
+  display: flex;
+  color: #212121;
+  font-weight: 400;
+  margin: 0 0 5px 0;
+  align-items: center;
+  font-weight: 600;
 }
 
 @media (max-width: 900px) {
