@@ -25,6 +25,7 @@ const Offer = ({ discount_products, products }) => {
 
   useEffect(() => {
     const myInterval = setInterval(() => {
+     
       setTimeLeft(prevTimeLeft => {
 
         const __time = prevTimeLeft - 1000

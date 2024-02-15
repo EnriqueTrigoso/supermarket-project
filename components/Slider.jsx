@@ -21,8 +21,6 @@ const Slider = ({ sliderImages }) => {
     <div className="container">
       <div className={styles.slider}>
 
-
-        <h1> Hola mundo</h1>
         {imagenes.length !== 0 &&
           imagenes.map((item, index) => {
             return (
