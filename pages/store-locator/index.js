@@ -55,5 +55,6 @@ export async function getStaticProps() {
       products: products.value.data,
       categories: categories.value.data,
     },
+    revalidate: 10,
   }
 }

@@ -29,6 +29,7 @@ export async function getStaticProps() {
       sliderImages: slider_images_sort,
       discount_products: discount_products.value.data
     },
+    revalidate: 10,
   }
 }
 
@@ -79,7 +80,7 @@ export default function Home({ products, categories, autos, sliderImages, discou
 
       <Brands />
       {/* <Clients /> */}
-      {/* <ListProductsSection /> */}
+      <ListProductsSection />
     </PageLayout >
   )
 }

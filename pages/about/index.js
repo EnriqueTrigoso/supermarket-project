@@ -61,7 +61,8 @@ export async function getStaticProps() {
       products: products.value.data,
       categories: categories.value.data,
       slider: slider.value.data
-    }
+    },
+    revalidate: 10,
   }
 }
 
