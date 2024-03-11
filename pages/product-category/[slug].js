@@ -62,12 +62,6 @@ export async function getStaticProps({ params }) {
     );
   }
 
-  const elemento = products.value.data.find((element) => {
-    return element.id === 164;
-  });
-
-  console.log(elemento);
-
   return {
     props: {
       products: products.value.data,

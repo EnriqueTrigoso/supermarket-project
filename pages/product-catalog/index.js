@@ -23,14 +23,13 @@ export async function getStaticProps() {
 
 const ProductCategory = ({ products, categories }) => {
 
-  // const product_prueba = products.reverse().slice(0, 15);
   const product_prueba = products.reverse();
 
   const dispatch = useDispatch()
   useEffect(() => {
-    dispatch(listProducts(products))
+    dispatch(listProducts(product_prueba))
     dispatch(listCategories(categories))
-  }, [dispatch, products, categories]);
+  }, [dispatch, product_prueba, categories]);
 
   useItemsToCart()
 
