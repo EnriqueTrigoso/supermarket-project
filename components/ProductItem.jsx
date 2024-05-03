@@ -7,9 +7,9 @@ import { formatingPrices } from "../utils";
 import Pagination from "./Pagination";
 import { useCategories } from "../hooks";
 import { OPEN_POPUP, CLOSE_POPUP } from "../constants/cartConstants";
+import { NOT_FOUND_IMAGE } from "../constants/productConstants";
 
 export const ProductItem = (product) => {
-  
   const {
     id,
     name,
@@ -32,23 +32,28 @@ export const ProductItem = (product) => {
         pathname: "/product/[slug]",
         query: { slug },
       }}
-      scroll= {true}
+      scroll={true}
     >
       <div className={`${styles.productitem} ${variant_border}`}>
         <div className={`${styles.content} ${variant_Horizontal}`}>
           <div className="flex justify-content image">
-
-            {
-              imgUrl ?
-                <Image width={200} height={200} src={imgUrl} alt={name}
-								  objectFit={'contain'}
-                />
-              :
-                <Image width={200} height={200} 
-                objectFit={'contain'}
-                src={'https://pvljogumgjnzfsbjpyke.supabase.co/storage/v1/object/sign/supermarket/not_found.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJzdXBlcm1hcmtldC9ub3RfZm91bmQud2VicCIsInRyYW5zZm9ybWF0aW9ucyI6IiIsImlhdCI6MTY3MDY5NDYzOCwiZXhwIjoxOTg2MDU0NjM4fQ.7XQ3ezS73jaMVQWzJXZslVp-zxX4XOdub72e5avQ3Cg&t=2022-12-10T17%3A50%3A39.411Z'} alt={name} />
-            }
-
+            {imgUrl ? (
+              <Image
+                width={200}
+                height={200}
+                src={imgUrl}
+                alt={name}
+                objectFit={"contain"}
+              />
+            ) : (
+              <Image
+                width={200}
+                height={200}
+                objectFit={"contain"}
+                src={NOT_FOUND_IMAGE}
+                alt={name}
+              />
+            )}
           </div>
           <div className={styles.content_details}>
             <a className={styles.category}>{category}</a>
@@ -61,10 +66,8 @@ export const ProductItem = (product) => {
                 className={`icon-ec-add-to-cart ${styles.cart}`}
                 onClick={(e) => {
                   e.preventDefault();
-                  
-                  dispatch(
-                    addToCart(product, 1)
-                  );
+
+                  dispatch(addToCart(product, 1));
                 }}
               />
             </div>
@@ -81,15 +84,14 @@ export const Products = ({ products_general, variant_border, pagination }) => {
     <>
       {categories.length !== 0 &&
         products_general.map((item, index) => {
-          
-          let category = ''
+          let category = "";
 
           try {
             category = categories.find(
               (category) => category.id === item.category
             ).name;
           } catch {
-            category = 'Indefinido'
+            category = "Indefinido";
           }
           return (
             <ProductItem

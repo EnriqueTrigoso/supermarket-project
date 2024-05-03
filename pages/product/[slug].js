@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { useItemsToCart } from "../../hooks";
 import { listCategories, listProducts } from "../../actions";
+import ProductCard from "../../components/Pages/Product/ProductCard/ProductCard";
 
 export default function ProductDetails({ products, categories, product }) {
   const category_name = categories.find(
@@ -32,22 +33,20 @@ export default function ProductDetails({ products, categories, product }) {
             <div
               className={`${styles.ctn_image} flex align-items justify-content`}
             >
-              {product.imgUrl ? (
-                <Image
-                  src={product.imgUrl}
-                  width="300"
-                  height="300"
+              {product.images ? (
+                <ProductCard
+                  url={product.images[0]}
                   alt={product.name}
+                  width={300}
+                  height={300}
                   priority
                 />
               ) : (
-                <Image
-                  src={
-                    "https://pvljogumgjnzfsbjpyke.supabase.co/storage/v1/object/sign/supermarket/not_found.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJzdXBlcm1hcmtldC9ub3RfZm91bmQud2VicCIsInRyYW5zZm9ybWF0aW9ucyI6IiIsImlhdCI6MTY3MDY5NDYzOCwiZXhwIjoxOTg2MDU0NjM4fQ.7XQ3ezS73jaMVQWzJXZslVp-zxX4XOdub72e5avQ3Cg&t=2022-12-10T17%3A50%3A39.411Z"
-                  }
-                  width="300"
-                  height="300"
+                <ProductCard
+                  url={product.imgUrl}
                   alt={product.name}
+                  width={300}
+                  height={300}
                   priority
                 />
               )}
@@ -55,83 +54,29 @@ export default function ProductDetails({ products, categories, product }) {
             <div
               className={`${styles.thumbnail_image} flex align-items justify-content top`}
             >
-              <span>
-                {product.imgUrl ? (
-                  <Image
-                    src={product.imgUrl}
-                    width="100"
-                    height="100"
-                    alt={product.name}
-                  />
-                ) : (
-                  <Image
-                    src={
-                      "https://pvljogumgjnzfsbjpyke.supabase.co/storage/v1/object/sign/supermarket/not_found.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJzdXBlcm1hcmtldC9ub3RfZm91bmQud2VicCIsInRyYW5zZm9ybWF0aW9ucyI6IiIsImlhdCI6MTY3MDY5NDYzOCwiZXhwIjoxOTg2MDU0NjM4fQ.7XQ3ezS73jaMVQWzJXZslVp-zxX4XOdub72e5avQ3Cg&t=2022-12-10T17%3A50%3A39.411Z"
-                    }
-                    width="100"
-                    height="100"
-                    alt={product.name}
-                  />
-                )}
-              </span>
-              <span>
-                {product.imgUrl ? (
-                  <Image
-                    src={product.imgUrl}
-                    width="100"
-                    height="100"
-                    alt={product.name}
-                  />
-                ) : (
-                  <Image
-                    src={
-                      "https://pvljogumgjnzfsbjpyke.supabase.co/storage/v1/object/sign/supermarket/not_found.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJzdXBlcm1hcmtldC9ub3RfZm91bmQud2VicCIsInRyYW5zZm9ybWF0aW9ucyI6IiIsImlhdCI6MTY3MDY5NDYzOCwiZXhwIjoxOTg2MDU0NjM4fQ.7XQ3ezS73jaMVQWzJXZslVp-zxX4XOdub72e5avQ3Cg&t=2022-12-10T17%3A50%3A39.411Z"
-                    }
-                    width="100"
-                    height="100"
-                    alt={product.name}
-                  />
-                )}
-              </span>
-              <span>
-                {product.imgUrl ? (
-                  <Image
-                    src={product.imgUrl}
-                    width="100"
-                    height="100"
-                    alt={product.name}
-                    priority
-                  />
-                ) : (
-                  <Image
-                    src={
-                      "https://pvljogumgjnzfsbjpyke.supabase.co/storage/v1/object/sign/supermarket/not_found.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJzdXBlcm1hcmtldC9ub3RfZm91bmQud2VicCIsInRyYW5zZm9ybWF0aW9ucyI6IiIsImlhdCI6MTY3MDY5NDYzOCwiZXhwIjoxOTg2MDU0NjM4fQ.7XQ3ezS73jaMVQWzJXZslVp-zxX4XOdub72e5avQ3Cg&t=2022-12-10T17%3A50%3A39.411Z"
-                    }
-                    width="100"
-                    height="100"
-                    alt={product.name}
-                  />
-                )}
-              </span>
-              <span>
-                {product.imgUrl ? (
-                  <Image
-                    src={product.imgUrl}
-                    width="100"
-                    height="100"
-                    alt={product.name}
-                  />
-                ) : (
-                  <Image
-                    src={
-                      "https://pvljogumgjnzfsbjpyke.supabase.co/storage/v1/object/sign/supermarket/not_found.webp?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJzdXBlcm1hcmtldC9ub3RfZm91bmQud2VicCIsInRyYW5zZm9ybWF0aW9ucyI6IiIsImlhdCI6MTY3MDY5NDYzOCwiZXhwIjoxOTg2MDU0NjM4fQ.7XQ3ezS73jaMVQWzJXZslVp-zxX4XOdub72e5avQ3Cg&t=2022-12-10T17%3A50%3A39.411Z"
-                    }
-                    width="100"
-                    height="100"
-                    alt={product.name}
-                  />
-                )}
-              </span>
+              {product.images
+                ? product.images.map((url, index) => {
+                    return (
+                      <ProductCard
+                        key={index}
+                        url={url}
+                        alt={product.name}
+                        width={100}
+                        height={100}
+                      />
+                    );
+                  })
+                : [...Array(4)].map((_, index) => {
+                    return (
+                      <ProductCard
+                        key={index}
+                        url={product.imgUrl}
+                        alt={product.name}
+                        width={100}
+                        height={100}
+                      />
+                    );
+                  })}
             </div>
           </div>
           <div className={styles.content}>
