@@ -1,12 +1,11 @@
 import { PageLayout, Title, Products, CounterSection } from "../../components";
 import styles from "../../styles/ProductDetails.module.css";
-import Image from "next/image";
 import { supabase } from "../../supabase/config";
 import { useDispatch } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useItemsToCart } from "../../hooks";
 import { listCategories, listProducts } from "../../actions";
-import ProductCard from "../../components/Pages/Product/ProductCard/ProductCard";
+import ProductImages from "../../components/Pages/Product/ProductImages";
 
 export default function ProductDetails({ products, categories, product }) {
   const category_name = categories.find(
@@ -30,54 +29,7 @@ export default function ProductDetails({ products, categories, product }) {
         <div className={`${styles.product_details} container gap`}>
           <div className={styles.banner}></div>
           <div className={styles.image}>
-            <div
-              className={`${styles.ctn_image} flex align-items justify-content`}
-            >
-              {product.images ? (
-                <ProductCard
-                  url={product.images[0]}
-                  alt={product.name}
-                  width={300}
-                  height={300}
-                  priority
-                />
-              ) : (
-                <ProductCard
-                  url={product.imgUrl}
-                  alt={product.name}
-                  width={300}
-                  height={300}
-                  priority
-                />
-              )}
-            </div>
-            <div
-              className={`${styles.thumbnail_image} flex align-items justify-content top`}
-            >
-              {product.images
-                ? product.images.map((url, index) => {
-                    return (
-                      <ProductCard
-                        key={index}
-                        url={url}
-                        alt={product.name}
-                        width={100}
-                        height={100}
-                      />
-                    );
-                  })
-                : [...Array(4)].map((_, index) => {
-                    return (
-                      <ProductCard
-                        key={index}
-                        url={product.imgUrl}
-                        alt={product.name}
-                        width={100}
-                        height={100}
-                      />
-                    );
-                  })}
-            </div>
+            <ProductImages product={product} />
           </div>
           <div className={styles.content}>
             <a className={styles.category}>{category_name}</a>

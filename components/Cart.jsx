@@ -46,7 +46,7 @@ export default function Cart({ setOpenModal }) {
           <div
             className={styles.button}
             onClick={() => {
-              const ToPhone = "51989475593";
+              const ToPhone = "51933439863";
               let productos = creatingItems(cartItems);
               const Message_format = toPercentEncoding(Message + productos);
               window.open(

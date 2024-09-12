@@ -13,6 +13,15 @@
   padding: 120px 0;
 }
 
+.product_card {
+  border: 2px solid var(--background-color);
+}
+
+.product_active {
+  border: 2px solid var(--color-primary);
+  /* box-shadow: inset 0 0 0 2px var(--color-primary); */
+}
+
 @media (min-width: 700px) {
   .products {
     grid-template-columns: repeat(3, minmax(0, 1fr));
