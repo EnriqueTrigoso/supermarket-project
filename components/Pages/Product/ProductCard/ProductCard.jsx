@@ -17,41 +17,47 @@ const ProductCard = ({
 
   const containerRef = useRef();
 
-  useEffect(() => {
-    if (!principal) return;
+  const imgElementRef = useRef();
 
-    const imgElement = document.getElementById("principalImage");
 
-    const container = containerRef.current;
+  const handleMouseMove = (e) => {
+    const x = e.clientX - e.target.offsetLeft;
+    const y = e.clientY - e.target.offsetTop;
 
-    const handleMouseMove = (e) => {
-      const x = e.clientX - e.target.offsetLeft;
-      const y = e.clientY - e.target.offsetTop;
+    imgElementRef.current.style.transform = "scale(2)";
+    imgElementRef.current.style.transformOrigin = `${x}px ${y}px`;
+  };
 
-      imgElement.style.transform = "scale(2)";
-      imgElement.style.transformOrigin = `${x}px ${y}px`;
-    };
+  const handleMouseLeave = (e) => {
+    imgElementRef.current.style.transformOrigin = "center";
+    imgElementRef.current.style.transform = "scale(1)";
+  };
 
-    const handleMouseLeave = () => {
-      imgElement.style.transformOrigin = "center";
-      imgElement.style.transform = "scale(1)";
-    };
+  // useEffect(() => {
+  //   if (!principal) return;
 
-    container.addEventListener("mousemove", handleMouseMove);
-    container.addEventListener("mouseleave", handleMouseLeave);
+  //   imgElementRef.current = document.getElementById("principalImage");
 
-    return () => {
-      container.removeEventListener("mousemove", handleMouseMove);
-      container.removeEventListener("mouseleave", handleMouseLeave);
-    };
-  }, []);
+  //   console.log(containerRef.current)
+
+  //   const container = containerRef.current;
+
+  //   container.addEventListener("mousemove", handleMouseMove);
+  //   container.addEventListener("mouseleave", handleMouseLeave);
+
+  //   return () => {
+  //     container.removeEventListener("mousemove", handleMouseMove);
+  //     container.removeEventListener("mouseleave", handleMouseLeave);
+  //   };
+
+  // }, []);
 
   if (imageUrl) {
     return (
       <span
         ref={containerRef}
-        className={!principal ? `${styles.product_card} ${border_red}` : ""}
-        onMouseEnter={onHover}
+        // className={!principal ? `${styles.product_card} ${border_red}` : ""}
+        // onMouseEnter={onHover}
       >
         <Image
           id={principal ? "principalImage" : ""}
@@ -66,10 +72,11 @@ const ProductCard = ({
   } else {
     return (
       <span
-        className={`${styles.product_card} ${border_red}`}
-        onMouseEnter={onHover}
-        onMouseMove={principal && handleMouseMove}
-        onMouseLeave={principal && handleMouseLeave}
+        // className={`${styles.product_card} ${border_red}`}
+        className={`${styles.product_card}`}
+        // onMouseEnter={onHover}
+        // onMouseMove={principal && handleMouseMove}
+        // onMouseLeave={principal && handleMouseLeave}
       >
         <Image
           src={NOT_FOUND_IMAGE}
